@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DieResource" load_steps=2 format=3 uid="uid://byd0su42x7r3k"]
+
+[ext_resource type="Script" uid="uid://cclxk2cix0lkw" path="res://addons/example_die_preview_generator/die_resource.gd" id="1_m8qm4"]
+
+[resource]
+script = ExtResource("1_m8qm4")
+pips = 5
+metadata/_custom_type_script = "uid://cclxk2cix0lkw"

@@ -15,5 +15,4 @@ func _generate_2d(resource: Resource, canvas: EditorResourcePreviewGeneratorCanv
 		return false
 	var color := (resource as MyCustomResource).color
 	canvas.draw_circle(canvas.get_size() / 2.0, canvas.get_size().x / 2.0, color, false)
-	print("PREVIEWING")
 	return true

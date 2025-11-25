@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DieResourceWrapperResource" load_steps=3 format=3 uid="uid://6wdnb8onrpkc"]
+
+[ext_resource type="Script" uid="uid://ev4dcsq0c45t" path="res://addons/example_die_preview_generator/die_resource_wrapper_resource.gd" id="1_jp0lf"]
+[ext_resource type="Resource" uid="uid://byd0su42x7r3k" path="res://addons/example_die_preview_generator/new_die_5.tres" id="1_r564s"]
+
+[resource]
+script = ExtResource("1_jp0lf")
+die = ExtResource("1_r564s")
+metadata/_custom_type_script = "uid://ev4dcsq0c45t"
