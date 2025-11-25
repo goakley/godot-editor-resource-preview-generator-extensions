@@ -3,9 +3,10 @@
 A Godot 4 plugin that extends the functionality of [`EditorResourcePreviewGenerator`](https://docs.godotengine.org/en/stable/classes/class_editorresourcepreviewgenerator.html) to simplify preview generation.
 Fully compatible with Godot's existing [`EditorResourcePreview`](https://docs.godotengine.org/en/stable/classes/class_editorresourcepreview.html) functionality.
 
-The plugin currently provides the following features:
+## Features
 
-* An `EditorResourcePreviewGenerator2D` class that allows for generating previews using [`CanvasItem`-style drawing calls](https://docs.godotengine.org/en/stable/tutorials/2d/custom_drawing_in_2d.html).
+The `EditorResourcePreviewGenerator2D` class allows for generating previews using [`CanvasItem`-style drawing calls](https://docs.godotengine.org/en/stable/tutorials/2d/custom_drawing_in_2d.html).
+It is an `EditorResourcePreviewGenerator`, but its `_generate_2d()` method replaces the parent class's `_generate()` method and passes in an object that allows for calling drawing methods (`draw_circle`, `draw_polyline`, etc).
 
 ## Examples
 
