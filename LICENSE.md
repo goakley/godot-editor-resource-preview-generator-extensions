@@ -1,0 +1,1 @@
+addons/editor_resource_preview_generator_extensions/LICENSE.md
