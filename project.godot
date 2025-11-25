@@ -16,7 +16,7 @@ config/icon="res://addons/editor_resource_preview_generator_extensions/icon.svg"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/editor_resource_preview_generator_extensions/plugin.cfg")
+enabled=PackedStringArray("res://addons/editor_resource_preview_generator_extensions/plugin.cfg", "res://addons/example_editor_resource_preview_generator_2d/plugin.cfg")
 
 [rendering]
 

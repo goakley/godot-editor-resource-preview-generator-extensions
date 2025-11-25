@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="MyCustomResource" load_steps=2 format=3 uid="uid://dtrycr2nsbgtf"]
+
+[ext_resource type="Script" uid="uid://c8xku8j3s47fx" path="res://addons/example_editor_resource_preview_generator_2d/my_custom_resource.gd" id="1_o7j6l"]
+
+[resource]
+script = ExtResource("1_o7j6l")
+color = Color(0, 1, 1, 1)
+metadata/_custom_type_script = "uid://c8xku8j3s47fx"

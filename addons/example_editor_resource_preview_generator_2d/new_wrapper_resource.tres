@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MyCustomResourceWrapperResource" load_steps=3 format=3 uid="uid://cq2okabm3ew82"]
+
+[ext_resource type="Resource" uid="uid://dtrycr2nsbgtf" path="res://addons/example_editor_resource_preview_generator_2d/new_custom_resource.tres" id="1_nqk3l"]
+[ext_resource type="Script" uid="uid://jkkv6oks11yf" path="res://addons/example_editor_resource_preview_generator_2d/my_custom_resource_wrapper_resource.gd" id="1_ticdl"]
+
+[resource]
+script = ExtResource("1_ticdl")
+my_custom_resource = ExtResource("1_nqk3l")
+metadata/_custom_type_script = "uid://jkkv6oks11yf"
