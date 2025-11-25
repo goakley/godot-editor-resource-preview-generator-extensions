@@ -2,5 +2,5 @@
 * text=auto eol=lf
 
 # Only include the addons folder when downloading from the Asset Library.
-/**                                                    export-ignore
-/addons/editor_resource_preview_generator_extension/** !export-ignore
+/**                                                     export-ignore
+/addons/editor_resource_preview_generator_extensions/** !export-ignore
