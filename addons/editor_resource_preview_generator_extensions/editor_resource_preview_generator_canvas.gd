@@ -83,13 +83,13 @@ func draw_animation_slice(animation_length: float, slice_begin: float, slice_end
 
 ## See [method CanvasItem.draw_char].
 func draw_char(font: Font, pos: Vector2, char: String, font_size: int = 16, modulate: Color = Color(1, 1, 1, 1), oversampling: float = 0.0) -> void:
-	if not char.is_empty():
+	if font and not char.is_empty():
 		font.draw_char(_canvas_item, pos, char.unicode_at(0), font_size, modulate, oversampling)
 
 
 ## See [method CanvasItem.draw_char_outline].
 func draw_char_outline(font: Font, pos: Vector2, char: String, font_size: int = 16, size: int = -1, modulate: Color = Color(1, 1, 1, 1), oversampling: float = 0.0) -> void:
-	if not char.is_empty():
+	if font and not char.is_empty():
 		font.draw_char_outline(_canvas_item, pos, char.unicode_at(0), font_size, size, modulate, oversampling)
 
 
@@ -145,13 +145,15 @@ func draw_multiline_colors(points: PackedVector2Array, colors: PackedColorArray,
 ## See [method CanvasItem.draw_multiline_string].
 func draw_multiline_string(font: Font, pos: Vector2, text: String, alignment: HorizontalAlignment = 0, width: float = -1, font_size: int = 16, max_lines: int = -1, modulate: Color = Color(1, 1, 1, 1), brk_flags: TextServer.LineBreakFlag = 3, justification_flags: TextServer.JustificationFlag = 3, direction: TextServer.Direction = 0, orientation: TextServer.Orientation = 0, oversampling: float = 0.0) -> void:
 	# NOTE: BitField annotation for `justification_flags` and `brk_flags` isn't available in GDScript
-	font.draw_multiline_string(_canvas_item, pos, text, alignment, width, font_size, max_lines, modulate, brk_flags, justification_flags, direction, orientation, oversampling)
+	if font:
+		font.draw_multiline_string(_canvas_item, pos, text, alignment, width, font_size, max_lines, modulate, brk_flags, justification_flags, direction, orientation, oversampling)
 
 
 ## See [method CanvasItem.draw_multiline_string_outline].
 func draw_multiline_string_outline(font: Font, pos: Vector2, text: String, alignment: HorizontalAlignment = 0, width: float = -1, font_size: int = 16, max_lines: int = -1, size: int = 1, modulate: Color = Color(1, 1, 1, 1), brk_flags: TextServer.LineBreakFlag = 3, justification_flags: TextServer.JustificationFlag = 3, direction: TextServer.Direction = 0, orientation: TextServer.Orientation = 0, oversampling: float = 0.0) -> void:
 	# NOTE: BitField annotation for `justification_flags` and `brk_flags` isn't available in GDScript
-	font.draw_multiline_string_outline(_canvas_item, pos, text, alignment, width, font_size, max_lines, size, modulate, brk_flags, justification_flags, direction, orientation, oversampling)
+	if font:
+		font.draw_multiline_string_outline(_canvas_item, pos, text, alignment, width, font_size, max_lines, size, modulate, brk_flags, justification_flags, direction, orientation, oversampling)
 
 
 ## See [method CanvasItem.draw_multimesh].
@@ -201,13 +203,15 @@ func draw_set_transform_matrix(xform: Transform2D) -> void:
 ## See [method CanvasItem.draw_string].
 func draw_string(font: Font, pos: Vector2, text: String, alignment: HorizontalAlignment = 0, width: float = -1, font_size: int = 16, modulate: Color = Color(1, 1, 1, 1), justification_flags: TextServer.JustificationFlag = 3, direction: TextServer.Direction = 0, orientation: TextServer.Orientation = 0, oversampling: float = 0.0) -> void:
 	# NOTE: BitField annotation for `justification_flags` isn't available in GDScript
-	font.draw_string(_canvas_item, pos, text, alignment, width, font_size, modulate, justification_flags, direction, orientation, oversampling)
+	if font:
+		font.draw_string(_canvas_item, pos, text, alignment, width, font_size, modulate, justification_flags, direction, orientation, oversampling)
 
 
 ## See [method CanvasItem.draw_string_outline].
 func draw_string_outline(font: Font, pos: Vector2, text: String, alignment: HorizontalAlignment = 0, width: float = -1, font_size: int = 16, size: int = 1, modulate: Color = Color(1, 1, 1, 1), justification_flags: TextServer.JustificationFlag = 3, direction: TextServer.Direction = 0, orientation: TextServer.Orientation = 0, oversampling: float = 0.0) -> void:
 	# NOTE: BitField annotation for `justification_flags` isn't available in GDScript
-	font.draw_string_outline(_canvas_item, pos, text, alignment, width, font_size, size, modulate, justification_flags, direction, orientation, oversampling)
+	if font:
+		font.draw_string_outline(_canvas_item, pos, text, alignment, width, font_size, size, modulate, justification_flags, direction, orientation, oversampling)
 
 
 ## See [method CanvasItem.draw_style_box].
