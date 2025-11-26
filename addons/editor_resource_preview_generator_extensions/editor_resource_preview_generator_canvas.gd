@@ -73,10 +73,39 @@ func get_size() -> Vector2i:
 	return _size
 
 
+## See [method CanvasItem.draw_animation_slice].
+func draw_animation_slice(animation_length: float, slice_begin: float, slice_end: float, offset: float = 0.0) -> void:
+	RenderingServer.canvas_item_add_animation_slice(_canvas_item, animation_length, slice_begin, slice_end, offset)
+
+
+# Missing: `draw_arc`
+
+
+## See [method CanvasItem.draw_char].
+func draw_char(font: Font, pos: Vector2, char: String, font_size: int = 16, modulate: Color = Color(1, 1, 1, 1), oversampling: float = 0.0) -> void:
+	if not char.is_empty():
+		font.draw_char(_canvas_item, pos, char.unicode_at(0), font_size, modulate, oversampling)
+
+
+## See [method CanvasItem.draw_char_outline].
+func draw_char_outline(font: Font, pos: Vector2, char: String, font_size: int = 16, size: int = -1, modulate: Color = Color(1, 1, 1, 1), oversampling: float = 0.0) -> void:
+	if not char.is_empty():
+		font.draw_char_outline(_canvas_item, pos, char.unicode_at(0), font_size, size, modulate, oversampling)
+
+
 ## See [method CanvasItem.draw_circle], except the circle will be filled.
 func draw_circle(position: Vector2, radius: float, color: Color, antialiased: bool = false) -> void:
 	# NOTE: no support for filled/width
 	RenderingServer.canvas_item_add_circle(_canvas_item, position, radius, color, antialiased)
+
+
+# Missing: `draw_colored_polygon`
+
+
+# Missing: `draw_dashed_line`
+
+
+# Missing: `draw_end_animation`
 
 
 ## See [method CanvasItem.draw_lcd_texture_rect_region].
@@ -113,9 +142,24 @@ func draw_multiline_colors(points: PackedVector2Array, colors: PackedColorArray,
 	RenderingServer.canvas_item_add_multiline(_canvas_item, points, colors, width, antialiased)
 
 
+## See [method CanvasItem.draw_multiline_string].
+func draw_multiline_string(font: Font, pos: Vector2, text: String, alignment: HorizontalAlignment = 0, width: float = -1, font_size: int = 16, max_lines: int = -1, modulate: Color = Color(1, 1, 1, 1), brk_flags: TextServer.LineBreakFlag = 3, justification_flags: TextServer.JustificationFlag = 3, direction: TextServer.Direction = 0, orientation: TextServer.Orientation = 0, oversampling: float = 0.0) -> void:
+	# NOTE: BitField annotation for `justification_flags` and `brk_flags` isn't available in GDScript
+	font.draw_multiline_string(_canvas_item, pos, text, alignment, width, font_size, max_lines, modulate, brk_flags, justification_flags, direction, orientation, oversampling)
+
+
+## See [method CanvasItem.draw_multiline_string_outline].
+func draw_multiline_string_outline(font: Font, pos: Vector2, text: String, alignment: HorizontalAlignment = 0, width: float = -1, font_size: int = 16, max_lines: int = -1, size: int = 1, modulate: Color = Color(1, 1, 1, 1), brk_flags: TextServer.LineBreakFlag = 3, justification_flags: TextServer.JustificationFlag = 3, direction: TextServer.Direction = 0, orientation: TextServer.Orientation = 0, oversampling: float = 0.0) -> void:
+	# NOTE: BitField annotation for `justification_flags` and `brk_flags` isn't available in GDScript
+	font.draw_multiline_string_outline(_canvas_item, pos, text, alignment, width, font_size, max_lines, size, modulate, brk_flags, justification_flags, direction, orientation, oversampling)
+
+
 ## See [method CanvasItem.draw_multimesh].
 func draw_multimesh(multimesh: MultiMesh, texture: Texture2D) -> void:
 	RenderingServer.canvas_item_add_multimesh(_canvas_item, multimesh.get_rid(), texture.get_rid())
+
+
+# Missing: `draw_polygon`
 
 
 ## See [method CanvasItem.draw_polyline].
@@ -146,9 +190,33 @@ func draw_rect(rect: Rect2, color: Color, antialiased: bool = false) -> void:
 	RenderingServer.canvas_item_add_rect(_canvas_item, rect, color, antialiased)
 
 
+# Missing: `draw_set_transform`
+
+
 ## See [method CanvasItem.draw_set_transform_matrix].
 func draw_set_transform_matrix(xform: Transform2D) -> void:
 	RenderingServer.canvas_item_add_set_transform(_canvas_item, xform)
+
+
+## See [method CanvasItem.draw_string].
+func draw_string(font: Font, pos: Vector2, text: String, alignment: HorizontalAlignment = 0, width: float = -1, font_size: int = 16, modulate: Color = Color(1, 1, 1, 1), justification_flags: TextServer.JustificationFlag = 3, direction: TextServer.Direction = 0, orientation: TextServer.Orientation = 0, oversampling: float = 0.0) -> void:
+	# NOTE: BitField annotation for `justification_flags` isn't available in GDScript
+	font.draw_string(_canvas_item, pos, text, alignment, width, font_size, modulate, justification_flags, direction, orientation, oversampling)
+
+
+## See [method CanvasItem.draw_string_outline].
+func draw_string_outline(font: Font, pos: Vector2, text: String, alignment: HorizontalAlignment = 0, width: float = -1, font_size: int = 16, size: int = 1, modulate: Color = Color(1, 1, 1, 1), justification_flags: TextServer.JustificationFlag = 3, direction: TextServer.Direction = 0, orientation: TextServer.Orientation = 0, oversampling: float = 0.0) -> void:
+	# NOTE: BitField annotation for `justification_flags` isn't available in GDScript
+	font.draw_string_outline(_canvas_item, pos, text, alignment, width, font_size, size, modulate, justification_flags, direction, orientation, oversampling)
+
+
+## See [method CanvasItem.draw_style_box].
+func draw_style_box(style_box: StyleBox, rect: Rect2) -> void:
+	if style_box:
+		style_box.draw(_canvas_item, rect)
+
+
+# Missing: `draw_texture`
 
 
 ## See [method CanvasItem.draw_texture_rect].
