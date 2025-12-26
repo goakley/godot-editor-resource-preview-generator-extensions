@@ -1,6 +1,8 @@
 # Normalize EOL for all files that Git considers text files.
 * text=auto eol=lf
 
-# Only include the addons folder when downloading from the Asset Library.
-/**                                                     export-ignore
+# Only include the addons/editor_resource_preview_generator_extensions folder when downloading from the Asset Library.
+* export-ignore
+/addons/ !export-ignore
+/addons/editor_resource_preview_generator_extensions/ !export-ignore
 /addons/editor_resource_preview_generator_extensions/** !export-ignore
